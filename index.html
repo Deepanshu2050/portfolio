@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepanshu Jangid | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #111928, #0f0f10);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Outer Background */
+        .outer-screen {
+            width: 90%;
+            max-width: 1400px;
+            min-height: 100vh;
+            background: rgba(20, 20, 30, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 0 auto;
+            padding-bottom: 20px; /* Prevent footer overlap */
+            overflow-y: auto; /* Enable scrolling */
+            position: relative;
+        }
+
+        /* First Inner Rectangle (Navigation & Hero Section) */
+        .inner-screen-one {
+            width: 100%;
+            background: #1e1e2a;
+            border-radius: 15px;
+            box-shadow: inset 0 4px 20px rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin-top: 20px;
+            padding-bottom: 40px;
+        }
+
+        /* Navbar inside first inner screen */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 80%;
+            /* background: rgba(255, 255, 255, 0.08); */
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            z-index: 1000;
+            justify-content: right;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        .navbar {
+    position: fixed;
+    top: 0;
+    width: 80%;
+    background: rgba(30, 30, 42, 0.9);
+    padding: 15px;
+    display: flex;
+    justify-content: right;
+    /* align-items: center; */
+    z-index: 1000;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide menu icon on larger screens */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #00adb5;
+}
+
+/* Mobile Menu (Hidden by Default) */
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Show menu icon */
+    }
+    
+    .nav-links {
+        display: none; /* Hide menu links */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(30, 30, 42, 0.95);
+        width: 200px;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: right;
+    }
+    
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    .nav-links.open {
+        display: flex; /* Show menu when active */
+    }
+}
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #00adb5;
+        }
+
+        /* Hero Section */
+        .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left; /* Align text to the left */
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 60px;
+    gap: 50px; /* Space between text and image */
+}
+
+.hero-text {
+    flex: 1; /* Text takes up available space */
+}
+
+.hero-image {
+    flex: 1; /* Image takes up available space */
+    display: flex;
+    justify-content: right;
+}
+
+.hero-image img {
+    width: 250px; /* Adjust size */
+    height: 250px;
+    border-radius: 50%; /* Makes it circular */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
+    border: 10px solid rgba(110, 106, 106, 0.3);
+}
+.hero-image img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* #about{
+            display: flex;
+        } */
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+
+        .resume-btn {
+            background-color: #00adb5;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+            margin-top: 20px;
+        }
+
+        .resume-btn:hover {
+            background-color: #00b8b0;
+        }
+
+        /* Second Inner Rectangle (Projects & Experience Section) */
+        .inner-screen-two {
+            width: 100%;
+            background: #1e1e2a;
+            border-radius: 25px;
+            box-shadow: inset 0 4px 20px rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .content-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .project-container, .experience-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project {
+            background: #28283d;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 300px;
+            text-align: center;
+        }
+         .experience {
+            background: #28283d;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            text-align: center;
+        }
+        .certifications-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certification-link {
+    background: #28283d;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    text-align: center;
+    color: white;
+}
+.project, .experience, .certification {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project:hover, .experience:hover, .certification:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+}
+
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: #1e1e2a;
+            margin-top: 40px;
+            border-radius: 15px;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 2rem;
+        }
+
+        .social-icons a {
+            color: #00adb5;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            color: #fff;
+        }
+
+        section{
+            scroll-margin-top: 35px;
+        }        
+
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 20px;
+        }
+        .certification a {
+    text-decoration: none;
+}
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media screen and (max-width: 768px) {
+        .hero {
+        flex-direction: column; /* Moves image below */
+        text-align: center;
+        gap: 50px; /* Adjust spacing */
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        width: 200px;  /* Smaller size for mobile */
+        height: 200px;
+    }
+    .certification-link{
+        display: block;
+        text-decoration: none;
+        text-decoration-line: none;
+        color: white;
+    }
+    
+}
+
+    </style>
+</head>
+<body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,  // Animation duration (in ms)
+        easing: 'ease-in-out',  // Smooth easing effect
+        once: true,  // Animation only happens once
+    });
+</script>
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("open");
+    }
+</script>
+
+    
+    <div class="outer-screen">
+        <div class="inner-screen-one">
+            <nav class="navbar">
+                <div class="menu-icon" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    
+                </ul>
+            </nav>
+            
+
+            <section class="hero" id="about" data-aos="fade-up">
+                <div class="hero-text">
+                    <h1>Hello, I'm Deepanshu Jangid</h1>
+                    <p>Software Engineer | Full Stack | Cloud Computing | Machine Learning</p>
+                    <a href="resume.pdf" download class="resume-btn">Download Resume</a>
+                </div>
+                <div class="hero-image">
+                    <img  src="./IMG_1149 (1).jpg" alt="Saksham Pradhan">
+                </div>
+            </section>
+        </div>
+
+        <div class="inner-screen-one">
+            <section id="projects" class="content-section" data-aos="fade-up">
+                <h2>Projects</h2>
+                <div class="project-container">
+                    <div class="project">
+                        <h3>Figma Prototype</h3>
+                        <p>Designed a high-fidelity prototype for a user-centric mobile application.</p>
+                    </div>
+                    <div class="project">
+                        <h3>AI Chatbot</h3>
+                        <p>Developed an AI-powered chatbot for seamless user interactions.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Spotify Terraform Management</h3>
+                        <p>Automated Spotify playlist management using Terraform.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Password Evaluation Tool</h3>
+                        <p>Built a password evaluation tool to assess the strength of passwords based on common security rules and patterns.</p>
+                    </div>
+                    <div class="project">
+                        <h3>AI Phishing Detection Tool</h3>
+                        <p>A machine learning-based system designed to detect and prevent phishing attacks by analyzing email content, sender behavior, and patterns.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Movie Ticket Booking</h3>
+                        <p>A console-based Movie Ticket Booking System built using C programming, designed to allow users to select movies, book seats, and generate tickets efficiently.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="content-section" data-aos="fade-up">
+                <h2>Experience</h2>
+                <div class="experience-container">
+                    <div class="experience">
+                        <h3>Summer Intern - Aditya Birla Group</h3>
+                        <p>Worked on a web application for temporary manpower requests.</p>
+                    </div>
+                    <div class="experience">
+                        <h3>Freelancer - Outlier AI</h3>
+                        <p>Worked on AI-driven analytics solutions, contributing to data science projects and delivering actionable insights.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="certifications" class="content-section" data-aos="fade-up">
+                <h2>Certifications</h2>
+                <div class="certifications-container">
+                    <a class="certification-link" style="text-decoration-line: none;">
+                    <div class="certification">
+                        <h3>Cloud Computing - IIT Kharagpur (NPTEL)</h3>
+                        <p>Completed a skill certification in Cloud Computing from IIT Kharagpur through NPTEL.</p>
+                    </div>
+                    </a>
+                
+
+                    <a class="certification-link" style="text-decoration-line: none;"> 
+                    <div class="certification">
+                        <h3>Google Cyber-Security Specialisation</h3>
+                        <p>Completed a series of courses covering security fundamentals, endpoint protection, incident response, and risk management. Developed skills in detecting and mitigating cyber threats using industry-standard tools and frameworks.</p>
+                    </div>
+                    </a>
+
+
+                    <a class="certification-link" style="text-decoration-line: none;" >
+                    <div class="certification">
+                        <h3>CipherSchools Cybersecurity - CipherSchools</h3>
+                        <p>Learned practical cybersecurity techniques, including ethical hacking, penetration testing, and security auditing. Explored real-world case studies to understand vulnerabilities and defense mechanisms.</p>
+                    </div>
+                    </a>
+                    <a class="certification-link" style="text-decoration-line: none;">
+                    <div class="certification">
+                        <h3>MasterCard Cybersecurity Job Simulation - Forage</h3>
+                        <p>Engaged in a hands-on job simulation, analyzing security incidents, identifying threats, and implementing protective measures in a simulated enterprise environment. Developed skills in threat intelligence and risk assessment.</p>
+                    </div>
+                    </a>
+                    <a class="certification-link" style="text-decoration-line: none;" >
+                    <div class="certification">
+                        <h3>Goldman Sachs - Software Engineering Job Simulation - Forage</h3>
+                        <p>Gained experience in software development and problem-solving by working on a simulated project. Developed skills in coding, debugging, and software optimization, mimicking real-world tasks at Goldman Sachs.</p>
+                    </div>
+                    </a>
+                    <a class="certification-link" style="text-decoration-line: none;" >
+                    <div class="certification">
+                        <h3>Tata Group – ESG Job Simulation - Forage</h3>
+                        <p>Learned about Environmental, Social, and Governance (ESG) principles in a corporate setting. Worked on projects related to sustainability, ethical business practices, and corporate responsibility in a simulated Tata Group environment.</p>
+                    </div>
+                    </a>
+                </di>
+            </section>
+
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact-section" data-aos="fade-up">
+                <h2>Contact Me</h2>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/deepanshujangid2050/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Deepanshu2050" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="" target=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </section>
+
+            <footer>
+                <p>© 2025 Deepanshu Jangid</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
